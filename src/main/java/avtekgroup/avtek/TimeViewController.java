@@ -31,7 +31,7 @@ public class TimeViewController {
             System.out.println("Selected Date: " + selectedDate);
             System.out.println("Selected Duration: " + selectedDuration);
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("car-size.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("category.fxml"));
             Stage currentStage = (Stage) datePicker.getScene().getWindow();
             currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
         } else {
