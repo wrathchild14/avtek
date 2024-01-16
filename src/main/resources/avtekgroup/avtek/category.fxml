@@ -5,17 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21"
-      fx:controller="avtekgroup.avtek.CategoryController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="avtekgroup.avtek.CategoryController">
     <padding>
-        <Insets bottom="10" left="10" right="10" top="10"/>
+        <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
-    <Button text="Compact" onAction="#handleCategoryClick"
-            style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: transparent; -fx-border-color: transparent;"/>
-    <Button text="Midsize" onAction="#handleCategoryClick"
-            style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: transparent; -fx-border-color: transparent;"/>
-    <Button text="Full Size" onAction="#handleCategoryClick"
-            style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: transparent; -fx-border-color: transparent;"/>
-    <Button fx:id="confirmButton" disable="true" onAction="#confirmSelection" text="Confirm"/>
-    <Label fx:id="warningLabel" text="Please select a car category" textFill="red" visible="false"/>
+    <Button onAction="#handleCategoryClick" prefHeight="31.0" prefWidth="110.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Compact" />
+    <Button onAction="#handleCategoryClick" prefHeight="31.0" prefWidth="110.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Midsize" />
+    <Button onAction="#handleCategoryClick" prefHeight="31.0" prefWidth="110.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Full Size" />
+    <Button fx:id="confirmButton" cache="true" defaultButton="true" disable="true" onAction="#confirmSelection" prefHeight="40.0" prefWidth="79.0" text="Confirm" />
+    <Label fx:id="warningLabel" text="Please select a car category" textFill="red" visible="false" />
 </VBox>
