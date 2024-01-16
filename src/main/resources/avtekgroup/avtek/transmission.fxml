@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.collections.FXCollections?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="avtekgroup.avtek.TransmissionController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10"/>
+    </padding>
+
+    <Label text="Choose Engine Type"/>
+    <ComboBox fx:id="engineTypeComboBox" promptText="Select Engine Type">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <Label text="Diesel"/>
+                <Label text="Petrol"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <Label text="Choose Transmission"/>
+    <ComboBox fx:id="transmissionComboBox" promptText="Select Transmission">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+
+                <Label text="Automatic"/>
+                <Label text="Manual"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <HBox spacing="20.0">
+        <Button onAction="#confirmSelection" text="Confirm"/>
+        <!-- Add other buttons or controls as needed -->
+    </HBox>
+</VBox>
+
