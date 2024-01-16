@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="avtekgroup.avtek.DetailsController">
+    <Label text="Price: 1200 Eur"/>
+
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10"/>
+    </padding>
+
+    <Label text="Details"/>
+
+    <TextField fx:id="nameField" promptText="Name"/>
+    <TextField fx:id="addressField" promptText="Address"/>
+    <TextField fx:id="emailField" promptText="Email"/>
+    <TextField fx:id="phoneField" promptText="Phone Number"/>
+    <TextField fx:id="ageField" promptText="Age"/>
+    <TextField fx:id="licenseValidityField" promptText="License Validity (in years)"/>
+
+    <HBox spacing="20.0" alignment="CENTER">
+        <Button onAction="#proceedToPayment" text="Proceed to Payment"/>
+    </HBox>
+
+    <Label fx:id="paymentCompleteLabel" text="Payment Complete!" textFill="green" visible="false"/>
+</VBox>
