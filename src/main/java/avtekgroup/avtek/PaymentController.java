@@ -15,11 +15,14 @@ public class PaymentController {
     public PasswordField ccvField;
     public Button payButton;
     public Label warningLabel;
+    public Button payCash;
+    public Label complete;
 
     public void pay(ActionEvent actionEvent) throws IOException {
         if (isCreditCardValid(creditCardField.getText()) && isCCVValid(ccvField.getText())) {
-            Stage paymentStage = (Stage) payButton.getScene().getWindow();
-            paymentStage.close();
+            complete.setVisible(true);
+//            Stage paymentStage = (Stage) payButton.getScene().getWindow();
+//            paymentStage.close();
 
             FXMLLoader detailsLoader = new FXMLLoader(getClass().getResource("details.fxml"));
             Parent detailsParent = detailsLoader.load();
@@ -38,4 +41,14 @@ public class PaymentController {
         return ccv != null && ccv.trim().length() == 3 && ccv.matches("\\d+");
     }
 
+    public void payWithCash(ActionEvent actionEvent) throws IOException {
+//        Stage paymentStage = (Stage) payButton.getScene().getWindow();
+//        paymentStage.close();
+        complete.setVisible(true);
+
+        FXMLLoader detailsLoader = new FXMLLoader(getClass().getResource("details.fxml"));
+        Parent detailsParent = detailsLoader.load();
+        DetailsController detailsController = detailsLoader.getController();
+        detailsController.completePayment();
+    }
 }
