@@ -38,9 +38,12 @@
         </items>
     </ComboBox>
 
-    <HBox spacing="20.0">
+    <Label fx:id="warningLabel" text="Please select transmission and fuel type" textFill="red" visible="false"/>
+
+
+    <HBox alignment="CENTER" spacing="20.0">
         <Button onAction="#confirmSelection" text="Confirm"/>
-        <!-- Add other buttons or controls as needed -->
     </HBox>
+
 </VBox>
 

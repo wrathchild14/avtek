@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class TransmissionController {
 
+    public Label warningLabel;
     @FXML
     private ComboBox<Label> engineTypeComboBox;
 
@@ -20,8 +21,8 @@ public class TransmissionController {
 
     @FXML
     private void confirmSelection(ActionEvent event) throws IOException {
-        String selectedEngineType = engineTypeComboBox.getValue().getText();
-        String selectedTransmission = transmissionComboBox.getValue().getText();
+        Label selectedEngineType = engineTypeComboBox.getValue();
+        Label selectedTransmission = transmissionComboBox.getValue();
 
         if (selectedEngineType != null && selectedTransmission != null) {
             System.out.println("Selected Engine Type: " + selectedEngineType);
@@ -32,6 +33,7 @@ public class TransmissionController {
             currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
         } else {
             System.out.println("Please select both engine type and transmission.");
+            warningLabel.setVisible(true);
         }
     }
 }
