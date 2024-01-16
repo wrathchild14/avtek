@@ -23,7 +23,6 @@ public class CategoryController {
     @FXML
     private void confirmSelection(ActionEvent event) throws IOException {
         if (selectedCategory != null) {
-            // Proceed with the confirmation logic
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("car-choice.fxml"));
             Stage currentStage = (Stage) warningLabel.getScene().getWindow();
             currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
@@ -47,7 +46,6 @@ public class CategoryController {
             warningLabel.setVisible(false);
         }
 
-        // Enable the "Confirm" button when a category is selected
         confirmButton.setDisable(false);
     }
 }

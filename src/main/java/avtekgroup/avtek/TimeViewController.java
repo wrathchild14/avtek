@@ -42,7 +42,7 @@ public class TimeViewController {
             currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
         } else {
             System.out.println("Please select both date and duration.");
-            warningLabel.setVisible(true);  // Show the warning label
+            warningLabel.setVisible(true);
         }
     }
 }
