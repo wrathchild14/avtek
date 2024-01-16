@@ -17,6 +17,6 @@ public class LandingController {
     private void onButtonClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("time-view.fxml"));
         Stage currentStage = (Stage) welcomeText.getScene().getWindow();
-        currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
+        currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
     }
 }

@@ -26,7 +26,7 @@ public class DetailsController {
 
         Stage paymentStage = new Stage();
         paymentStage.setTitle("Payment");
-        paymentStage.setScene(new Scene(paymentParent, 640, 360));
+        paymentStage.setScene(new Scene(paymentParent, 400, 300));
 
         // blocks interactions with the primary stage)
         paymentStage.initModality(Modality.APPLICATION_MODAL);

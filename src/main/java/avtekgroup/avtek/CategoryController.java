@@ -25,7 +25,7 @@ public class CategoryController {
         if (selectedCategory != null) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("car-choice.fxml"));
             Stage currentStage = (Stage) warningLabel.getScene().getWindow();
-            currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
+            currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
         } else {
             warningLabel.setText("Please select a car category.");
             warningLabel.setVisible(true);

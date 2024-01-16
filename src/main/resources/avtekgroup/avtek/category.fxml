@@ -9,9 +9,9 @@
     <padding>
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
-    <Button onAction="#handleCategoryClick" prefHeight="31.0" prefWidth="110.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Compact" />
-    <Button onAction="#handleCategoryClick" prefHeight="31.0" prefWidth="110.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Midsize" />
-    <Button onAction="#handleCategoryClick" prefHeight="31.0" prefWidth="110.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Full Size" />
-    <Button fx:id="confirmButton" cache="true" defaultButton="true" disable="true" onAction="#confirmSelection" prefHeight="40.0" prefWidth="79.0" text="Confirm" />
+    <Button onAction="#handleCategoryClick" prefHeight="35.0" prefWidth="200.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Compact" />
+    <Button onAction="#handleCategoryClick" prefHeight="35.0" prefWidth="200.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Midsize" />
+    <Button onAction="#handleCategoryClick" prefHeight="35.0" prefWidth="200.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Full Size" />
+    <Button fx:id="confirmButton" cache="true" defaultButton="true" disable="true" onAction="#confirmSelection" prefHeight="50.0" prefWidth="100.0" text="Confirm" />
     <Label fx:id="warningLabel" text="Please select a car category" textFill="red" visible="false" />
 </VBox>

@@ -55,6 +55,6 @@ public class CarChoiceController {
     public void confirmAndProceed(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("transmission.fxml"));
         Stage currentStage = (Stage) selectedCarLabel.getScene().getWindow();
-        currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
+        currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
     }
 }

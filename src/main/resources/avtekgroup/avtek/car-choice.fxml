@@ -3,31 +3,29 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21"
-      fx:controller="avtekgroup.avtek.CarChoiceController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="avtekgroup.avtek.CarChoiceController">
 
     <padding>
-        <Insets bottom="10" left="10" right="10" top="10"/>
+        <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
 
-    <Label text="Choose Your Car"/>
+    <Label text="Choose Available Car" />
 
-    <HBox spacing="20.0" alignment="CENTER">
-        <Button onAction="#carSelected" graphicTextGap="10">
+    <HBox alignment="CENTER" spacing="20.0">
+        <Button graphicTextGap="10" onAction="#carSelected" prefHeight="40.0" prefWidth="100.0">
             <text>MB C180</text>
         </Button>
 
-        <Button onAction="#carSelected" graphicTextGap="10">
+        <Button graphicTextGap="10" onAction="#carSelected" prefHeight="40.0" prefWidth="100.0">
             <text>Audi A5</text>
         </Button>
     </HBox>
 
-    <Label fx:id="selectedCarLabel" visible="false"/>
-    <ImageView fx:id="carImageView" fitHeight="100" fitWidth="150"/>
-    <Button onAction="#confirmAndProceed" text="Confirm and Proceed"/>
+    <Label fx:id="selectedCarLabel" visible="false" />
+    <ImageView fx:id="carImageView" fitHeight="150.0" fitWidth="200.0" />
+    <Button defaultButton="true" onAction="#confirmAndProceed" prefHeight="50.0" prefWidth="160.0" text="Confirm and Proceed" />
 </VBox>

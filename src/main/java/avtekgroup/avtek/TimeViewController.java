@@ -42,7 +42,7 @@ public class TimeViewController {
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("category.fxml"));
             Stage currentStage = (Stage) datePicker.getScene().getWindow();
-            currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
+            currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
         } else {
             System.out.println("Please select both date and duration.");
             warningLabel.setVisible(true);

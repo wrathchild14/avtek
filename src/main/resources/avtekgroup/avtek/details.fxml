@@ -4,30 +4,32 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.layout.HBox?>
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="avtekgroup.avtek.DetailsController">
-    <Label text="Price: 1200 Eur"/>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-    <padding>
-        <Insets bottom="10" left="10" right="10" top="10"/>
-    </padding>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="avtekgroup.avtek.DetailsController">
+    <Label text="Price: 1200 Eur" />
 
-    <Label text="Details"/>
+    <Label text="Details">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font></Label>
 
-    <TextField fx:id="nameField" promptText="Name"/>
-    <TextField fx:id="addressField" promptText="Address"/>
-    <TextField fx:id="emailField" promptText="Email"/>
-    <TextField fx:id="phoneField" promptText="Phone Number"/>
-    <TextField fx:id="ageField" promptText="Age"/>
-    <TextField fx:id="licenseValidityField" promptText="License Validity (in years)"/>
+    <TextField fx:id="nameField" promptText="Name" />
+    <TextField fx:id="addressField" promptText="Address" />
+    <TextField fx:id="emailField" promptText="Email" />
+    <TextField fx:id="phoneField" promptText="Phone Number" />
+    <TextField fx:id="ageField" promptText="Age" />
+    <TextField fx:id="licenseValidityField" promptText="License Validity (in years)" />
 
-    <HBox spacing="20.0" alignment="CENTER">
-        <Button onAction="#proceedToPayment" text="Proceed to Payment"/>
+    <HBox alignment="CENTER" spacing="20.0">
+        <Button defaultButton="true" onAction="#proceedToPayment" prefHeight="50.0" prefWidth="160.0" text="Proceed to Payment" />
     </HBox>
 
-    <Label fx:id="paymentCompleteLabel" text="Payment Complete!" textFill="green" visible="false"/>
+    <Label fx:id="paymentCompleteLabel" text="Payment Complete!" textFill="green" visible="false" />
+
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
 </VBox>

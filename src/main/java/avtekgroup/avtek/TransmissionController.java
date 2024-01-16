@@ -30,7 +30,7 @@ public class TransmissionController {
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("details.fxml"));
             Stage currentStage = (Stage) engineTypeComboBox.getScene().getWindow();
-            currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
+            currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
         } else {
             System.out.println("Please select both engine type and transmission.");
             warningLabel.setVisible(true);
