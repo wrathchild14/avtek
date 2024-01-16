@@ -14,6 +14,9 @@ import java.time.LocalDate;
 
 public class TimeViewController {
     @FXML
+    public ComboBox<Label> pickupLocationComboBox;
+
+    @FXML
     private DatePicker datePicker;
 
     @FXML
