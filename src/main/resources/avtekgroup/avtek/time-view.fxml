@@ -14,8 +14,8 @@
     <padding>
         <Insets bottom="10" left="10" right="10" top="10"/>
     </padding>
-    <DatePicker fx:id="datePicker" layoutX="189.0" layoutY="176.0" promptText="Select pickup date"/>
-    <ComboBox fx:id="durationComboBox" layoutX="214.0" layoutY="103.0" promptText="Select Duration">
+    <DatePicker fx:id="datePicker" promptText="Select pickup date"/>
+    <ComboBox fx:id="durationComboBox" promptText="Select Duration">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <Label text="1 day"/>
@@ -26,7 +26,7 @@
             </FXCollections>
         </items>
     </ComboBox>
-    <Button layoutX="253.0" layoutY="248.0" onAction="#confirmSelection" text="Confirm"/>
-    <Label fx:id="warningLabel" layoutX="214.0" layoutY="300.0" text="Please select a duration" textFill="red"
+    <Button onAction="#confirmSelection" text="Confirm"/>
+    <Label fx:id="warningLabel" text="Please select a duration" textFill="red"
            visible="false"/>
 </VBox>

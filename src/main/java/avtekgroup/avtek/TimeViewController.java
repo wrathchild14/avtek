@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class TimeViewController {
     @FXML
@@ -20,6 +21,11 @@ public class TimeViewController {
 
     @FXML
     private Label warningLabel;
+
+    @FXML
+    private void initialize() {
+        datePicker.setValue(LocalDate.now());
+    }
 
     @FXML
     private void confirmSelection(ActionEvent event) throws IOException {
