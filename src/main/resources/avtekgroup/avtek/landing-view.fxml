@@ -13,7 +13,7 @@
   </padding>
 
   <Label fx:id="welcomeText" text="Welcome to Avtek!" />
-   <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="316.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../../avtek-logo.png" />
       </image>

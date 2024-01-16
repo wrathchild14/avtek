@@ -23,20 +23,25 @@ public class DetailsController {
     public Label warningLabel;
     public CheckBox insuranceCheckBox;
     public Label priceLabel;
+    public Label ageWarning;
 
     public void proceedToPayment(ActionEvent actionEvent) throws IOException {
         if (areAllFieldsFilled()) {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("payment.fxml"));
-            Parent paymentParent = fxmlLoader.load();
+            if (Integer.parseInt(ageField.getText()) >= 18) {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("payment.fxml"));
+                Parent paymentParent = fxmlLoader.load();
 
-            Stage paymentStage = new Stage();
-            paymentStage.setTitle("Payment");
-            paymentStage.setScene(new Scene(paymentParent, 400, 300));
+                Stage paymentStage = new Stage();
+                paymentStage.setTitle("Payment");
+                paymentStage.setScene(new Scene(paymentParent, 400, 300));
 
-            // blocks interactions with the primary stage)
-            paymentStage.initModality(Modality.APPLICATION_MODAL);
+                // blocks interactions with the primary stage)
+                paymentStage.initModality(Modality.APPLICATION_MODAL);
 
-            paymentStage.show();
+                paymentStage.show();
+            } else {
+                ageWarning.setVisible(true);
+            }
         } else {
             warningLabel.setVisible(true);
         }

@@ -41,6 +41,8 @@
 
     <Label fx:id="warningLabel" text="Please fill all fields (ensure that age and licence validity are digits)"
            textFill="red" visible="false"/>
+    <Label fx:id="ageWarning" text="User must be above 18 to rent a car"
+           textFill="red" visible="false"/>
     <Label fx:id="paymentCompleteLabel" text="Payment Complete!" textFill="green" visible="false"/>
 
     <padding>
