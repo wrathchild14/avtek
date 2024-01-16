@@ -14,6 +14,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class CarChoiceController {
+    public Button confirmButton;
     @FXML
     private Label selectedCarLabel;
 
@@ -33,6 +34,7 @@ public class CarChoiceController {
         Image image = loadImage(imagePath);
         carImageView.setImage(image);
         carImageView.setVisible(true);
+        confirmButton.setDisable(false);
     }
 
     private String getCarImagePath(String carModel) {

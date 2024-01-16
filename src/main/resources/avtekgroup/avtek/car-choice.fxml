@@ -34,7 +34,7 @@
                <Insets right="50.0" />
             </HBox.margin>
          </Button>
-          <Button defaultButton="true" onAction="#confirmAndProceed" prefHeight="50.0" prefWidth="160.0" text="Confirm and Proceed" />
+          <Button fx:id="confirmButton" onAction="#confirmAndProceed" cache="true" defaultButton="true" disable="true"  prefHeight="50.0" prefWidth="100.0" text="Confirm" />
       </children>
    </HBox>
 </VBox>
