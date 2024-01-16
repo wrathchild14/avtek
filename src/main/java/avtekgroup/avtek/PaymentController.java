@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
@@ -13,14 +14,28 @@ public class PaymentController {
     public PasswordField creditCardField;
     public PasswordField ccvField;
     public Button payButton;
+    public Label warningLabel;
 
     public void pay(ActionEvent actionEvent) throws IOException {
-        Stage paymentStage = (Stage) payButton.getScene().getWindow();
-        paymentStage.close();
+        if (isCreditCardValid(creditCardField.getText()) && isCCVValid(ccvField.getText())) {
+            Stage paymentStage = (Stage) payButton.getScene().getWindow();
+            paymentStage.close();
 
-        FXMLLoader detailsLoader = new FXMLLoader(getClass().getResource("details.fxml"));
-        Parent detailsParent = detailsLoader.load();
-        DetailsController detailsController = detailsLoader.getController();
-        detailsController.completePayment();
+            FXMLLoader detailsLoader = new FXMLLoader(getClass().getResource("details.fxml"));
+            Parent detailsParent = detailsLoader.load();
+            DetailsController detailsController = detailsLoader.getController();
+            detailsController.completePayment();
+        } else {
+            warningLabel.setVisible(true);
+        }
     }
+
+    private boolean isCreditCardValid(String creditCard) {
+        return creditCard != null && creditCard.trim().length() == 16 && creditCard.matches("\\d+");
+    }
+
+    private boolean isCCVValid(String ccv) {
+        return ccv != null && ccv.trim().length() == 3 && ccv.matches("\\d+");
+    }
+
 }

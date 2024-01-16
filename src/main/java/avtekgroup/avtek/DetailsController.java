@@ -19,19 +19,24 @@ public class DetailsController {
     public TextField ageField;
     public TextField licenseValidityField;
     public Label paymentCompleteLabel;
+    public Label warningLabel;
 
     public void proceedToPayment(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("payment.fxml"));
-        Parent paymentParent = fxmlLoader.load();
+        if (areAllFieldsFilled()) {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("payment.fxml"));
+            Parent paymentParent = fxmlLoader.load();
 
-        Stage paymentStage = new Stage();
-        paymentStage.setTitle("Payment");
-        paymentStage.setScene(new Scene(paymentParent, 400, 300));
+            Stage paymentStage = new Stage();
+            paymentStage.setTitle("Payment");
+            paymentStage.setScene(new Scene(paymentParent, 400, 300));
 
-        // blocks interactions with the primary stage)
-        paymentStage.initModality(Modality.APPLICATION_MODAL);
+            // blocks interactions with the primary stage)
+            paymentStage.initModality(Modality.APPLICATION_MODAL);
 
-        paymentStage.show();
+            paymentStage.show();
+        } else {
+            warningLabel.setVisible(true);
+        }
     }
 
     public void completePayment() {
@@ -43,5 +48,16 @@ public class DetailsController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("transmission.fxml"));
         Stage currentStage = (Stage) nameField.getScene().getWindow();
         currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
+    }
+
+    private boolean areAllFieldsFilled() {
+        return !nameField.getText().isEmpty() &&
+                !addressField.getText().isEmpty() &&
+                !emailField.getText().isEmpty() &&
+                !phoneField.getText().isEmpty() &&
+                !ageField.getText().isEmpty() &&
+                !licenseValidityField.getText().isEmpty() &&
+                ageField.getText().matches("\\d+") &&
+                licenseValidityField.getText().matches("\\d+");
     }
 }
