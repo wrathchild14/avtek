@@ -2,9 +2,13 @@ package avtekgroup.avtek;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CategoryController {
 
@@ -12,21 +16,38 @@ public class CategoryController {
     private Label warningLabel;
 
     @FXML
-    private void confirmSelection(ActionEvent event) {
+    private Button confirmButton;
+
+    private String selectedCategory;
+
+    @FXML
+    private void confirmSelection(ActionEvent event) throws IOException {
+        if (selectedCategory != null) {
+            // Proceed with the confirmation logic
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("car-choice.fxml"));
+            Stage currentStage = (Stage) warningLabel.getScene().getWindow();
+            currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
+        } else {
+            warningLabel.setText("Please select a car category.");
+            warningLabel.setVisible(true);
+        }
     }
 
     @FXML
     private void handleCategoryClick(ActionEvent event) {
-        Button selectedCategory = (Button) event.getSource();
-        String category = selectedCategory.getText();
+        Button clickedCategory = (Button) event.getSource();
+        selectedCategory = clickedCategory.getText();
 
-        System.out.println("Selected Car Category: " + category);
+        System.out.println("Selected Car Category: " + selectedCategory);
 
-        if (category.equals("Compact")) {
+        if (selectedCategory.equals("Compact")) {
             warningLabel.setText("Compact cars may have limited trunk space.");
             warningLabel.setVisible(true);
         } else {
             warningLabel.setVisible(false);
         }
+
+        // Enable the "Confirm" button when a category is selected
+        confirmButton.setDisable(false);
     }
 }

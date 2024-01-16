@@ -16,6 +16,6 @@
             style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: transparent; -fx-border-color: transparent;"/>
     <Button text="Full Size" onAction="#handleCategoryClick"
             style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: transparent; -fx-border-color: transparent;"/>
-    <Button onAction="#confirmSelection" text="Confirm"/>
+    <Button fx:id="confirmButton" disable="true" onAction="#confirmSelection" text="Confirm"/>
     <Label fx:id="warningLabel" text="Please select a car category" textFill="red" visible="false"/>
 </VBox>
