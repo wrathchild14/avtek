@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
@@ -20,6 +21,8 @@ public class DetailsController {
     public TextField licenseValidityField;
     public Label paymentCompleteLabel;
     public Label warningLabel;
+    public CheckBox insuranceCheckBox;
+    public Label priceLabel;
 
     public void proceedToPayment(ActionEvent actionEvent) throws IOException {
         if (areAllFieldsFilled()) {
@@ -59,5 +62,12 @@ public class DetailsController {
                 !licenseValidityField.getText().isEmpty() &&
                 ageField.getText().matches("\\d+") &&
                 licenseValidityField.getText().matches("\\d+");
+    }
+
+    public void updatePrice(ActionEvent actionEvent) {
+        double basePrice = 1200.0;
+        double insurancePrice = 2.0;
+        double totalPrice = basePrice + (insuranceCheckBox.isSelected() ? insurancePrice : 0);
+        priceLabel.setText("Price: " + totalPrice + " Eur");
     }
 }
