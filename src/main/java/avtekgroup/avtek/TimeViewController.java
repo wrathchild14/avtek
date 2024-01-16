@@ -48,4 +48,11 @@ public class TimeViewController {
             warningLabel.setVisible(true);
         }
     }
+
+    public void goBack(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("landing-view.fxml"));
+        Stage currentStage = (Stage) datePicker.getScene().getWindow();
+        currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
+    }
+
 }

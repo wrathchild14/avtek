@@ -7,6 +7,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="CENTER" prefHeight="406.0" prefWidth="532.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="avtekgroup.avtek.TimeViewController">
@@ -14,39 +15,50 @@
     <padding>
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
-    <DatePicker fx:id="datePicker" prefHeight="30.0" prefWidth="300.0" promptText="Select pickup date" />
-    <ComboBox fx:id="durationComboBox" prefHeight="30.0" prefWidth="300.0" promptText="Select Duration">
-        <items>
-            <FXCollections fx:factory="observableArrayList">
-                <Label text="1 day" />
-                <Label text="2 days" />
-                <Label text="3 days" />
-                <Label text="4 days" />
-                <Label text="5+ days" />
-            </FXCollections>
-        </items>
-      <effect>
-         <ColorAdjust />
-      </effect>
-    </ComboBox>
-    <ComboBox fx:id="pickupLocationComboBox" prefHeight="30.0" prefWidth="300.0" promptText="Pickup Location (Default:Ljubljana)">
-        <items>
-            <FXCollections fx:factory="observableArrayList">
-                <Label text="Ljubljana" />
-                <Label text="Maribor" />
-                <Label text="Celje" />
-                <Label text="Kranj" />
-                <Label text="Velenje" />
-                <Label text="Koper" />
-                <Label text="Novo Mesto" />
-                <Label text="Murska Sobota" />
-                <Label text="Jesenice" />
-                <Label text="Portorož" />
-                <Label text="Letališče Brnik" />
-                <Label text="Letališče Maribor" />
-            </FXCollections>
-        </items>
-    </ComboBox>
-    <Button defaultButton="true" onAction="#confirmSelection" prefHeight="50.0" prefWidth="100.0" text="Confirm" />
-    <Label fx:id="warningLabel" text="Please select a duration" textFill="red" visible="false" />
+
+     <DatePicker fx:id="datePicker" prefHeight="30.0" prefWidth="300.0" promptText="Select pickup date" />
+     <ComboBox fx:id="durationComboBox" prefHeight="30.0" prefWidth="300.0" promptText="Select Duration">
+         <items>
+             <FXCollections fx:factory="observableArrayList">
+                 <Label text="1 day" />
+                 <Label text="2 days" />
+                 <Label text="3 days" />
+                 <Label text="4 days" />
+                 <Label text="5+ days" />
+             </FXCollections>
+         </items>
+         <effect>
+             <ColorAdjust />
+         </effect>
+     </ComboBox>
+     <ComboBox fx:id="pickupLocationComboBox" prefHeight="30.0" prefWidth="300.0" promptText="Pickup Location (Default:Ljubljana)">
+         <items>
+             <FXCollections fx:factory="observableArrayList">
+                 <Label text="Ljubljana" />
+                 <Label text="Maribor" />
+                 <Label text="Celje" />
+                 <Label text="Kranj" />
+                 <Label text="Velenje" />
+                 <Label text="Koper" />
+                 <Label text="Novo Mesto" />
+                 <Label text="Murska Sobota" />
+                 <Label text="Jesenice" />
+                 <Label text="Portorož" />
+                 <Label text="Letališče Brnik" />
+                 <Label text="Letališče Maribor" />
+             </FXCollections>
+         </items>
+     </ComboBox>
+
+    <HBox alignment="CENTER">
+      <children>
+           <Button alignment="CENTER" cancelButton="true" contentDisplay="BOTTOM" onAction="#goBack" prefHeight="50.0" prefWidth="100.0" text="Back">
+            <HBox.margin>
+               <Insets right="50.0" />
+            </HBox.margin>
+         </Button>
+           <Button defaultButton="true" onAction="#confirmSelection" prefHeight="50.0" prefWidth="100.0" text="Confirm" />
+      </children>
+    </HBox>
+     <Label fx:id="warningLabel" text="Please select a duration" textFill="red" visible="false" />
 </VBox>

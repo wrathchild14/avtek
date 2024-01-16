@@ -38,4 +38,10 @@ public class DetailsController {
         System.out.println("Payment complete");
         paymentCompleteLabel.setVisible(true);
     }
+
+    public void goBack(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("transmission.fxml"));
+        Stage currentStage = (Stage) nameField.getScene().getWindow();
+        currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
+    }
 }

@@ -48,4 +48,10 @@ public class CategoryController {
 
         confirmButton.setDisable(false);
     }
+
+    public void goBack(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("time-view.fxml"));
+        Stage currentStage = (Stage) warningLabel.getScene().getWindow();
+        currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
+    }
 }

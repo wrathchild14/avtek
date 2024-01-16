@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="avtekgroup.avtek.CarChoiceController">
+<VBox alignment="CENTER" prefHeight="422.0" prefWidth="370.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="avtekgroup.avtek.CarChoiceController">
 
     <padding>
         <Insets bottom="10" left="10" right="10" top="10" />
@@ -27,5 +27,14 @@
 
     <Label fx:id="selectedCarLabel" visible="false" />
     <ImageView fx:id="carImageView" fitHeight="150.0" fitWidth="200.0" />
-    <Button defaultButton="true" onAction="#confirmAndProceed" prefHeight="50.0" prefWidth="160.0" text="Confirm and Proceed" />
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button alignment="CENTER" cancelButton="true" contentDisplay="BOTTOM" onAction="#goBack" prefHeight="50.0" prefWidth="100.0" text="Back">
+            <HBox.margin>
+               <Insets right="50.0" />
+            </HBox.margin>
+         </Button>
+          <Button defaultButton="true" onAction="#confirmAndProceed" prefHeight="50.0" prefWidth="160.0" text="Confirm and Proceed" />
+      </children>
+   </HBox>
 </VBox>

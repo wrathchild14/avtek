@@ -36,4 +36,10 @@ public class TransmissionController {
             warningLabel.setVisible(true);
         }
     }
+
+    public void goBack(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("car-choice.fxml"));
+        Stage currentStage = (Stage) warningLabel.getScene().getWindow();
+        currentStage.setScene(new Scene(fxmlLoader.load(), 800, 500));
+    }
 }

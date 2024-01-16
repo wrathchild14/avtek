@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="avtekgroup.avtek.CategoryController">
@@ -12,6 +13,15 @@
     <Button onAction="#handleCategoryClick" prefHeight="35.0" prefWidth="200.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Compact" />
     <Button onAction="#handleCategoryClick" prefHeight="35.0" prefWidth="200.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Midsize" />
     <Button onAction="#handleCategoryClick" prefHeight="35.0" prefWidth="200.0" style="-fx-text-fill: -fx-text-base-color; -fx-font-size: 1.1em; -fx-background-color: lightgray; -fx-border-color: transparent;" text="Full Size" />
-    <Button fx:id="confirmButton" cache="true" defaultButton="true" disable="true" onAction="#confirmSelection" prefHeight="50.0" prefWidth="100.0" text="Confirm" />
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button alignment="CENTER" cancelButton="true" contentDisplay="BOTTOM" onAction="#goBack" prefHeight="50.0" prefWidth="100.0" text="Back">
+            <HBox.margin>
+               <Insets right="50.0" />
+            </HBox.margin>
+         </Button>
+          <Button fx:id="confirmButton" cache="true" defaultButton="true" disable="true" onAction="#confirmSelection" prefHeight="50.0" prefWidth="100.0" text="Confirm" />
+      </children>
+   </HBox>
     <Label fx:id="warningLabel" text="Please select a car category" textFill="red" visible="false" />
 </VBox>
