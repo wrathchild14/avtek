@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="avtekgroup.avtek.CarChoiceController">
-   <children>
-      <Label layoutX="385.0" layoutY="29.0" prefHeight="62.0" prefWidth="178.0" text="Choose car" />
-   </children>
-</AnchorPane>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21"
+      fx:controller="avtekgroup.avtek.CarChoiceController">
+
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10"/>
+    </padding>
+
+    <Label text="Choose Your Car"/>
+
+    <HBox spacing="20.0" alignment="CENTER">
+        <Button onAction="#carSelected" graphicTextGap="10">
+            <text>MB C180</text>
+        </Button>
+
+        <Button onAction="#carSelected" graphicTextGap="10">
+            <text>Audi A5</text>
+        </Button>
+    </HBox>
+
+    <Label fx:id="selectedCarLabel" visible="false"/>
+    <ImageView fx:id="carImageView" fitHeight="100" fitWidth="150"/>
+    <Button onAction="#confirmAndProceed" text="Confirm and Proceed"/>
+</VBox>
