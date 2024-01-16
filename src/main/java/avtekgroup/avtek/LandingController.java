@@ -15,7 +15,7 @@ public class LandingController {
 
     @FXML
     private void onButtonClick(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("car-choice.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("time-view.fxml"));
         Stage currentStage = (Stage) welcomeText.getScene().getWindow();
         currentStage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
     }

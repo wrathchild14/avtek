@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21"
+      fx:controller="avtekgroup.avtek.TimeViewController">
+
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10"/>
+    </padding>
+    <DatePicker fx:id="datePicker" layoutX="189.0" layoutY="176.0" promptText="Select pickup date"/>
+    <ComboBox fx:id="durationComboBox" layoutX="214.0" layoutY="103.0" promptText="Select Duration">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <Label text="1 day"/>
+                <Label text="2 days"/>
+                <Label text="3 days"/>
+                <Label text="4 days"/>
+                <Label text="5+ days"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <Button layoutX="253.0" layoutY="248.0" onAction="#confirmSelection" text="Confirm"/>
+    <Label fx:id="warningLabel" layoutX="214.0" layoutY="300.0" text="Please select a duration" textFill="red"
+           visible="false"/>
+</VBox>
